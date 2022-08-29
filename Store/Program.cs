@@ -10,6 +10,7 @@ builder.Services.AddDbContext<StoreDbContext>(opts => // DB Service
   opts.UseSqlServer(builder.Configuration["ConnectionStrings:StoreConnection"]); // Retrieve connection string from appsettings.json
 });
 
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
 var app = builder.Build();
 
