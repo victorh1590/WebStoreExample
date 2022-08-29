@@ -1,6 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Store.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews(); // Shared objects required for MVC/Razor
+
+builder.Services.AddDbContext<StoreDbContext>(opts => // DB Service
+{
+  opts.UseSqlServer(builder.Configuration["ConnectionStrings:StoreConnection"]); // Retrieve connection string from appsettings.json
+});
+
 
 var app = builder.Build();
 
