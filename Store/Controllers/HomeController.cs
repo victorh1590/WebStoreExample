@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-namespace SportsStore.Controllers
+namespace Store.Controllers
 {
   public class HomeController : Controller
   {

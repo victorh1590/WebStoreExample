@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
-namespace SportsStore.Models
+namespace Store.Models
 {
   public class Product
   {
