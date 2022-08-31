@@ -20,4 +20,6 @@ app.UseStaticFiles(); // Static files in wwwroot
 
 app.MapDefaultControllerRoute(); //MVC Endpoints.
 
+SeedData.EnsurePopulated(app); // Apply migrations and populates DB if empty.
+
 app.Run();
