@@ -87,3 +87,5 @@ namespace Store.Models
     }
   }
 }
+
+// To drop db: dotnet ef database drop --force --context StoreDbContext
