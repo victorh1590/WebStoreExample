@@ -12,6 +12,6 @@ namespace Store.Controllers
       _repository = repository;
     }
 
-    public IActionResult Index() => View(); // Send products from repository to view.
+    public IActionResult Index() => View(_repository.Products); // Send products from repository to view.
   }
 }
