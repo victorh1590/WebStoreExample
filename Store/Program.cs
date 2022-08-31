@@ -18,9 +18,35 @@ var app = builder.Build();
 
 app.UseStaticFiles(); // Static files in wwwroot
 
+app.MapControllerRoute("category_page", "{category}/Page{productPage:int}",
+  new
+  {
+    Controller = "Home",
+    action = "Index"
+  });
+
+app.MapControllerRoute("page", "Page{productPage:int}",
+  new
+  {
+    Controller = "Home",
+    action = "Index",
+    productPage = 1
+  });
+
+app.MapControllerRoute("category", "{category}",
+  new
+  {
+    Controller = "Home",
+    action = "Index",
+    productPage = 1
+  });
+
 app.MapControllerRoute("pagination", "Products/Page{productPage}", // Add new route for Index pages.
-  new {
-    Controller = "Home", action = "Index"
+  new
+  {
+    Controller = "Home",
+    action = "Index",
+    productPage = 1
   });
 
 app.MapDefaultControllerRoute(); //MVC Endpoints.
