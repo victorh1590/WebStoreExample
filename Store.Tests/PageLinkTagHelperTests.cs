@@ -17,6 +17,7 @@ namespace SportsStore.Tests
     public void Can_Generate_Page_Links()
     {
       // Arrange
+      //IUrlHelper and IUrlHelperFactory interfaces.
       var urlHelper = new Mock<IUrlHelper>();
       urlHelper.SetupSequence(x => x.Action(It.IsAny<UrlActionContext>()))
       .Returns("Test/Page1")
@@ -25,6 +26,7 @@ namespace SportsStore.Tests
       var urlHelperFactory = new Mock<IUrlHelperFactory>();
       urlHelperFactory.Setup(f => f.GetUrlHelper(It.IsAny<ActionContext>())).Returns(urlHelper.Object);
       var viewContext = new Mock<ViewContext>();
+      //Tag Helper.
       PageLinkTagHelper helper =
       new PageLinkTagHelper(urlHelperFactory.Object)
       {
